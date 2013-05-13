@@ -1,0 +1,43 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=4578
+
+
+<C-q> move cursor at closing bracket to make easy appending variables 
+      rotate all bracket pairs in hierarchial order. 
+<C-b> in opposite order with <C-q> 
+
+<A-q> same order with <C-q> but cursor located at front pos of bracket pair 
+<A-b> same order with <C-b> 
+
+
+<C-j> move through quotes or brackets 
+
+    ("'[{word▌}]'") 
+    ("'[{word}▌]'") 
+    ("'[{word}]▌'") 
+    ("'[{word}]'▌") 
+    ("'[{word}]'"▌) 
+    ("'[{word}]'")▌       
+
+You can add or modify 
+let g:closingList = ["'",'"',")","]",">","}","$",''] 
+
+in which <C-j> key can pass through. 
+
+
+If cursor is at last closed bracket pos 
+<C-j> key works in following way 
+
+        in python 
+            def func(▄) 
+            def func(): 
+                ▄ 
+
+        in C 
+            void func(▄) 
+            void func() { 
+                ▄ 
+            } 
+
+    else works like enter key if the pos of cursor is at last column. 
+ 
+
