@@ -1,15 +1,34 @@
 This is a mirror of http://www.vim.org/scripts/script.php?script_id=4578
 
-
-<C-q> move cursor at closing bracket to make easy appending variables 
-      rotate all bracket pairs in hierarchial order. 
-<C-b> in opposite order with <C-q> 
-
-<A-q> same order with <C-q> but cursor located at front pos of bracket pair 
-<A-b> same order with <C-b> 
+ 1. traverse
 
 
-<C-j> move through quotes or brackets 
+map  <M-f> : forward traverse parentheses,  will stop at end position
+imap <M-b> : backward traverse parentheses, will stop at start position
+
+
+
+let abc = func( foo( xyz ), love( child(toy, food(water) ), parent ) )
+                                        |                                               |  |              |  |
+                         |      |                   |          |               |           
+
+
+
+ 2. spread or shrink
+
+
+imap <M-l> : spread out parentheses
+imap <M-h> : shink parentheses
+
+
+
+ 3. easy pass
+
+
+<C-j> especially, in python coding can pass through "..." '...' (...) [...] <...> in insert mode selectively
+      if the cursor meet keyword (say, class object(abc), if (...), for(...), etc.)
+      <C-j> key will work as <right arrow> or <tab> or <enter> or spot ":" and <enter>
+      so as to user don't care about which key to press.
 
     ("'[{word▌}]'") 
     ("'[{word}▌]'") 
@@ -18,14 +37,6 @@ This is a mirror of http://www.vim.org/scripts/script.php?script_id=4578
     ("'[{word}]'"▌) 
     ("'[{word}]'")▌       
 
-You can add or modify 
-let g:closingList = ["'",'"',")","]",">","}","$",''] 
-
-in which <C-j> key can pass through. 
-
-
-If cursor is at last closed bracket pos 
-<C-j> key works in following way 
 
         in python 
             def func(▄) 
@@ -40,4 +51,14 @@ If cursor is at last closed bracket pos
 
     else works like enter key if the pos of cursor is at last column. 
  
+
+You can add or modify 
+let g:closingList = ["'",'"',")","]",">","}","$",''] 
+
+in which <C-j> key can pass through. 
+
+
+
+Note : all work will be done in insert mode except <M-f>
+
 
