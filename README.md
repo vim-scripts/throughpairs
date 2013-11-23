@@ -8,8 +8,8 @@
 
      1. traverse
 
-    <M-o> : forward traverse parentheses,  will stop at closing position
-    <M-n> : backward traverse parentheses, will stop at opening position
+    <M-f> : forward traverse parentheses,  will stop at closing position
+    <M-b> : backward traverse parentheses, will stop at opening position
 
 
      2. spread or shrink

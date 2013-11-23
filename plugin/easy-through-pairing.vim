@@ -193,22 +193,22 @@ endfunction
 " nmap ,x :call LocatePos()<CR>
 
 if has('unix')
-	set <M-p>=p
-	set <M-n>=n
+	set <M-f>=f
+	set <M-b>=b
 endif
 "------------------"
 " backward traverse"
-imap <silent><M-n> <C-[>:call LocatePos(-1,0)<CR>a
-nmap <silent><M-n> :call LocatePos(-1,0)<cr>a
+imap <silent><M-b> <C-[>:call LocatePos(-1,0)<CR>a
+nmap <silent><M-b> :call LocatePos(-1,0)<cr>a
 "------------------"
 
 "------------------"
 " forward traverse"
-imap <silent><M-p> <C-[>:call LocatePos(1,1)<CR>i
-nmap <silent><M-p> :call LocatePos(1,1)<CR>i
+imap <silent><M-f> <C-[>:call LocatePos(1,1)<CR>i
+nmap <silent><M-f> :call LocatePos(1,1)<CR>i
 "------------------"
   
 
 " through-pair-brackets.vim
-" ((((wef(wefewfe(((wefk)m)ÛÛÛÛÛÛÛ)ÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛ)(()ÛÛÛÛÛh)))ÛÛÛÛÛÛÛÛÛÛÛÛ) ()
+" ((kkkk((wef(wefewfe(((wefk)m)ÛÛÛÛÛÛÛ)ÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛ)(()ÛÛÛÛÛh)))ÛÛÛÛÛÛÛÛÛÛÛÛ) ()
 " (weoi+)(wefiojo)(weoifj;)(oêewofijê(îweofi(weojif);)(woe+i(weoi+(weofij))))
